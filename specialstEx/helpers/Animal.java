@@ -1,5 +1,6 @@
 package specialstEx.helpers;
 
+import java.util.Date;
 import java.util.List;
 import java.text.SimpleDateFormat;
 
@@ -58,10 +59,13 @@ public abstract class Animal {
     }
 
     public void print() {
-        System.out.println("" + this.name + this.kind + this.type + this.birthDate + this.getCommands());
+        System.out.println(
+                "" + this.name + ", " + this.kind + ", " + this.type + ", " + this.birthDate.format(new Date()) + ", "
+                        + this.getCommands());
     }
 
     public String writeElement() {
-        return ("" + this.name + this.kind + this.type + this.birthDate + this.getCommands());
+        return ("" + this.name + "," + this.kind + "," + this.type + "," + this.birthDate.format(new Date()) + ","
+                + this.getCommands());
     }
 }
