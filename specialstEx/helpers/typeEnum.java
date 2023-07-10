@@ -1,4 +1,6 @@
-public enum type {
+package specialstEx.helpers;
+
+public enum typeEnum {
     DOG,
     CAT,
     HAMSTER,
