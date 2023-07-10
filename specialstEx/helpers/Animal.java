@@ -1,16 +1,17 @@
 package specialstEx.helpers;
 
 import java.util.List;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public abstract class Animal {
     private String name;
     private typeEnum type;
     private kindEnum kind;
-    private Date birthDate;
+    protected SimpleDateFormat birthDate;
     private List<String> commands;
 
-    public Animal(String name, specialstEx.helpers.typeEnum type, specialstEx.helpers.kindEnum kind, Date birthDate,
+    public Animal(String name, specialstEx.helpers.typeEnum type, specialstEx.helpers.kindEnum kind,
+            SimpleDateFormat birthDate,
             List<String> commands) {
         this.name = name;
         this.type = type;
@@ -41,7 +42,7 @@ public abstract class Animal {
         return this.name;
     }
 
-    public Date getBirthDate() {
+    public SimpleDateFormat getBirthDate() {
         return this.birthDate;
     }
 
@@ -54,5 +55,13 @@ public abstract class Animal {
             System.out.println("Класс изменен на домашнее животное");
         }
 
+    }
+
+    public void print() {
+        System.out.println("" + this.name + this.kind + this.type + this.birthDate + this.getCommands());
+    }
+
+    public String writeElement() {
+        return ("" + this.name + this.kind + this.type + this.birthDate + this.getCommands());
     }
 }
